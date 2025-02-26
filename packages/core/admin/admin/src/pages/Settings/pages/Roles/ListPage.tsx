@@ -229,15 +229,6 @@ const ListPage = () => {
                   usersCount={role.usersCount}
                   icons={
                     [
-                      canCreate &&
-                        ({
-                          onClick: handleClickDuplicate(role),
-                          label: formatMessage({
-                            id: 'app.utils.duplicate',
-                            defaultMessage: 'Duplicate',
-                          }),
-                          children: <Duplicate />,
-                        } satisfies RoleRowProps['icons'][number]),
                       canUpdate &&
                         ({
                           onClick: () => navigate(role.id.toString()),
