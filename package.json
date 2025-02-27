@@ -1,6 +1,8 @@
 {
   "name": "strapi",
+  "version": "1.0.0",
   "private": true,
+  "description": "Custom fork of Strapi with no duplicate",
   "bugs": {
     "url": "https://github.com/strapi/strapi/issues"
   },
