@@ -28,7 +28,7 @@ import {
   useRBAC,
   CheckPagePermissions,
 } from '@strapi/helper-plugin';
-import { Duplicate, Pencil, Plus, Trash } from '@strapi/icons';
+import { Pencil, Plus, Trash } from '@strapi/icons';
 import { AxiosError } from 'axios';
 import produce from 'immer';
 import { useIntl } from 'react-intl';
@@ -239,15 +239,6 @@ const ListPage = () => {
                   usersCount={role.usersCount}
                   icons={
                     [
-                      canCreate &&
-                        ({
-                          onClick: handleClickDuplicate(role),
-                          label: formatMessage({
-                            id: 'app.utils.duplicate',
-                            defaultMessage: 'Duplicate',
-                          }),
-                          icon: <Duplicate />,
-                        } satisfies RoleRowProps['icons'][number]),
                       canUpdate &&
                         ({
                           onClick: () => push(`/settings/roles/${role.id}`),
