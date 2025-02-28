@@ -23,9 +23,7 @@
       "url": "https://strapi.io"
     }
   ],
-  "bin": {
-    "strapi": "./packages/core/strapi/bin/strapi.js"
-  },
+  "bin": "./packages/core/strapi/bin/strapi.js",
   "workspaces": [
     "packages/*",
     "packages/*/*",
