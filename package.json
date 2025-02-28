@@ -41,7 +41,7 @@
     "format": "yarn format:code && yarn format:other",
     "format:code": "yarn prettier:code --write",
     "format:other": "yarn prettier:other --write",
-    "postinstall": "node -e \"require('fs').symlinkSync('./packages/core/strapi/bin/strapi.js', './bin/strapi.js', 'file')\"",
+    "postinstall": "yarn build && node -e \"const fs = require('fs'); if (fs.existsSync('./packages/core/strapi/bin/strapi.js')) { fs.symlinkSync('./packages/core/strapi/bin/strapi.js', './bin/strapi.js', 'file'); } else { console.error('Strapi CLI not found, build may have failed'); process.exit(1); }\"",
     "lint": "nx run-many --target=lint --nx-ignore-cycles && yarn lint:other",
     "lint:fix": "nx run-many --target=lint --nx-ignore-cycles -- --fix",
     "lint:other": "npm run prettier:other -- --check",
